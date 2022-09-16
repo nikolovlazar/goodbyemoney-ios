@@ -11,6 +11,11 @@
 		EBA684F528D3799B000C541E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA684F428D3799B000C541E /* ContentView.swift */; };
 		EBA684F728D3799C000C541E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA684F628D3799C000C541E /* Assets.xcassets */; };
 		EBA684FA28D3799C000C541E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA684F928D3799C000C541E /* Preview Assets.xcassets */; };
+		EBA6850328D37A58000C541E /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850228D37A58000C541E /* Expenses.swift */; };
+		EBA6850528D37A6B000C541E /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850428D37A6B000C541E /* Reports.swift */; };
+		EBA6850728D37D04000C541E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850628D37D04000C541E /* Settings.swift */; };
+		EBA6850928D37EC2000C541E /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850828D37EC2000C541E /* Categories.swift */; };
+		EBA6850C28D38867000C541E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850B28D38867000C541E /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		EBA684F428D3799B000C541E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EBA684F628D3799C000C541E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBA684F928D3799C000C541E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EBA6850228D37A58000C541E /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		EBA6850428D37A6B000C541E /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
+		EBA6850628D37D04000C541E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		EBA6850828D37EC2000C541E /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		EBA6850B28D38867000C541E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,9 @@
 		EBA684F128D3799B000C541E /* GoodbyeMoney */ = {
 			isa = PBXGroup;
 			children = (
+				EBA6850A28D3885B000C541E /* Models */,
+				EBA6850128D37A20000C541E /* Components */,
+				EBA6850028D37A12000C541E /* Screens */,
 				EBA684F228D3799B000C541E /* GoodbyeMoneyApp.swift */,
 				EBA684F428D3799B000C541E /* ContentView.swift */,
 				EBA684F628D3799C000C541E /* Assets.xcassets */,
@@ -65,6 +78,32 @@
 				EBA684F928D3799C000C541E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EBA6850028D37A12000C541E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EBA6850228D37A58000C541E /* Expenses.swift */,
+				EBA6850428D37A6B000C541E /* Reports.swift */,
+				EBA6850628D37D04000C541E /* Settings.swift */,
+				EBA6850828D37EC2000C541E /* Categories.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		EBA6850128D37A20000C541E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EBA6850A28D3885B000C541E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBA6850B28D38867000C541E /* Category.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA6850328D37A58000C541E /* Expenses.swift in Sources */,
 				EBA684F528D3799B000C541E /* ContentView.swift in Sources */,
 				EBA684F328D3799B000C541E /* GoodbyeMoneyApp.swift in Sources */,
+				EBA6850528D37A6B000C541E /* Reports.swift in Sources */,
+				EBA6850728D37D04000C541E /* Settings.swift in Sources */,
+				EBA6850928D37EC2000C541E /* Categories.swift in Sources */,
+				EBA6850C28D38867000C541E /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +319,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +349,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
