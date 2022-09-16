@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB510B7428D4CC1900D3C07B /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB510B7328D4CC1900D3C07B /* Add.swift */; };
+		EB510B7728D4D51E00D3C07B /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB510B7628D4D51E00D3C07B /* Keyboard.swift */; };
 		EBA684F328D3799B000C541E /* GoodbyeMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA684F228D3799B000C541E /* GoodbyeMoneyApp.swift */; };
 		EBA684F528D3799B000C541E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA684F428D3799B000C541E /* ContentView.swift */; };
 		EBA684F728D3799C000C541E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA684F628D3799C000C541E /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB510B7328D4CC1900D3C07B /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
+		EB510B7628D4D51E00D3C07B /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		EBA684EF28D3799B000C541E /* GoodbyeMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodbyeMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA684F228D3799B000C541E /* GoodbyeMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodbyeMoneyApp.swift; sourceTree = "<group>"; };
 		EBA684F428D3799B000C541E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB510B7528D4D51500D3C07B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EB510B7628D4D51E00D3C07B /* Keyboard.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		EBA684E628D3799B000C541E = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +73,7 @@
 		EBA684F128D3799B000C541E /* GoodbyeMoney */ = {
 			isa = PBXGroup;
 			children = (
+				EB510B7528D4D51500D3C07B /* Utilities */,
 				EBA6850A28D3885B000C541E /* Models */,
 				EBA6850128D37A20000C541E /* Components */,
 				EBA6850028D37A12000C541E /* Screens */,
@@ -87,6 +100,7 @@
 				EBA6850428D37A6B000C541E /* Reports.swift */,
 				EBA6850628D37D04000C541E /* Settings.swift */,
 				EBA6850828D37EC2000C541E /* Categories.swift */,
+				EB510B7328D4CC1900D3C07B /* Add.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -180,7 +194,9 @@
 				EBA684F528D3799B000C541E /* ContentView.swift in Sources */,
 				EBA684F328D3799B000C541E /* GoodbyeMoneyApp.swift in Sources */,
 				EBA6850528D37A6B000C541E /* Reports.swift in Sources */,
+				EB510B7728D4D51E00D3C07B /* Keyboard.swift in Sources */,
 				EBA6850728D37D04000C541E /* Settings.swift in Sources */,
+				EB510B7428D4CC1900D3C07B /* Add.swift in Sources */,
 				EBA6850928D37EC2000C541E /* Categories.swift in Sources */,
 				EBA6850C28D38867000C541E /* Category.swift in Sources */,
 			);

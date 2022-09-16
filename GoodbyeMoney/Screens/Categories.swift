@@ -54,9 +54,9 @@ struct Categories: View {
                 ColorPicker("", selection: $newCategoryColor, supportsOpacity: false)
                     .labelsHidden()
                     .accessibilityLabel("")
-
+                
                 ZStack(alignment: .trailing) {
-                    
+
                     TextField("New category", text: $newCategoryName)
                         .textFieldStyle(.roundedBorder)
                         .submitLabel(.done)
@@ -93,7 +93,19 @@ struct Categories: View {
                 }
             }
             .padding(.horizontal, 16)
+            .padding(.bottom, 16)
             .navigationTitle("Categories")
+        }
+        .padding(.top, 16)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button {
+                    hideKeyboard()
+                } label: {
+                    Label("Dismiss", systemImage: "keyboard.chevron.compact.down")
+                }
+            }
         }
     }
 }

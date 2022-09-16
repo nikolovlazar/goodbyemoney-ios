@@ -20,7 +20,7 @@ struct ContentView: View {
                     Label("Reports", systemImage: "chart.bar.fill")
                 }
             
-            Text("")
+            Add()
                 .tabItem {
                     Label("Add", systemImage: "plus")
                 }
