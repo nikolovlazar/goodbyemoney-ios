@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-enum Currency {
-    case USD, CAD, EUR, MKD
-}
-
-enum Recurrence {
-    case none, daily, weekly, monthly, yearly
-}
-
 struct Add: View {
     @State private var amount = ""
     @State private var currency = Currency.USD

@@ -12,15 +12,14 @@ struct Categories: View {
     @State private var newCategoryName: String = ""
     @State private var newCategoryColor = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
     @State private var categories: [Category] = [
-        Category(id: 0, name: "Groceries", color: .blue),
-        Category(id: 1, name: "Bills", color: .purple),
-        Category(id: 2, name: "Subscriptions", color: .red),
+        Category(name: "Groceries", color: .blue),
+        Category(name: "Bills", color: .purple),
+        Category(name: "Subscriptions", color: .red),
     ]
     
     func handleSubmit() {
         if newCategoryName.count > 0 {
             categories.append(Category(
-                id: categories.count,
                 name: newCategoryName,
                 color: newCategoryColor
             ))
@@ -37,7 +36,7 @@ struct Categories: View {
     var body: some View {
         VStack {
             List {
-                ForEach(categories) { category in
+                ForEach(categories, id: \.name) { category in
                     HStack {
                         Circle()
                             .frame(width: 12)

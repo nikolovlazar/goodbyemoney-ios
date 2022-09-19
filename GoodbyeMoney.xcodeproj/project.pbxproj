@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB4B67E828D8700E002A4D8B /* TotalCurrencyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67E728D8700E002A4D8B /* TotalCurrencyBox.swift */; };
+		EB4B67EA28D87376002A4D8B /* ExpensesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67E928D87376002A4D8B /* ExpensesList.swift */; };
+		EB4B67EC28D8759C002A4D8B /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67EB28D8759C002A4D8B /* Expense.swift */; };
+		EB4B67EE28D87616002A4D8B /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67ED28D87616002A4D8B /* Currency.swift */; };
+		EB4B67F128D87B03002A4D8B /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F028D87B03002A4D8B /* Double.swift */; };
+		EB4B67F328D88198002A4D8B /* MockExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F228D88198002A4D8B /* MockExpenses.swift */; };
+		EB4B67F528D881D4002A4D8B /* Recurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F428D881D4002A4D8B /* Recurrence.swift */; };
+		EB4B67F728D887B9002A4D8B /* ExpensesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F628D887B9002A4D8B /* ExpensesUtils.swift */; };
+		EB4B67F928D88A1E002A4D8B /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F828D88A1E002A4D8B /* DateUtils.swift */; };
+		EB4B67FB28D8A504002A4D8B /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67FA28D8A504002A4D8B /* Tag.swift */; };
 		EB510B7428D4CC1900D3C07B /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB510B7328D4CC1900D3C07B /* Add.swift */; };
-		EB510B7728D4D51E00D3C07B /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB510B7628D4D51E00D3C07B /* Keyboard.swift */; };
+		EB510B7728D4D51E00D3C07B /* KeyboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB510B7628D4D51E00D3C07B /* KeyboardUtils.swift */; };
 		EBA684F328D3799B000C541E /* GoodbyeMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA684F228D3799B000C541E /* GoodbyeMoneyApp.swift */; };
 		EBA684F528D3799B000C541E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA684F428D3799B000C541E /* ContentView.swift */; };
 		EBA684F728D3799C000C541E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA684F628D3799C000C541E /* Assets.xcassets */; };
@@ -21,8 +31,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB4B67E728D8700E002A4D8B /* TotalCurrencyBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCurrencyBox.swift; sourceTree = "<group>"; };
+		EB4B67E928D87376002A4D8B /* ExpensesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesList.swift; sourceTree = "<group>"; };
+		EB4B67EB28D8759C002A4D8B /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		EB4B67ED28D87616002A4D8B /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		EB4B67F028D87B03002A4D8B /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		EB4B67F228D88198002A4D8B /* MockExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExpenses.swift; sourceTree = "<group>"; };
+		EB4B67F428D881D4002A4D8B /* Recurrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurrence.swift; sourceTree = "<group>"; };
+		EB4B67F628D887B9002A4D8B /* ExpensesUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesUtils.swift; sourceTree = "<group>"; };
+		EB4B67F828D88A1E002A4D8B /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		EB4B67FA28D8A504002A4D8B /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		EB510B7328D4CC1900D3C07B /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
-		EB510B7628D4D51E00D3C07B /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		EB510B7628D4D51E00D3C07B /* KeyboardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUtils.swift; sourceTree = "<group>"; };
 		EBA684EF28D3799B000C541E /* GoodbyeMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodbyeMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA684F228D3799B000C541E /* GoodbyeMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodbyeMoneyApp.swift; sourceTree = "<group>"; };
 		EBA684F428D3799B000C541E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,10 +66,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB4B67E628D86FFE002A4D8B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EB4B67E728D8700E002A4D8B /* TotalCurrencyBox.swift */,
+				EB4B67E928D87376002A4D8B /* ExpensesList.swift */,
+				EB4B67FA28D8A504002A4D8B /* Tag.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EB4B67EF28D87AFA002A4D8B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB4B67F028D87B03002A4D8B /* Double.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EB510B7528D4D51500D3C07B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				EB510B7628D4D51E00D3C07B /* Keyboard.swift */,
+				EB510B7628D4D51E00D3C07B /* KeyboardUtils.swift */,
+				EB4B67F628D887B9002A4D8B /* ExpensesUtils.swift */,
+				EB4B67F828D88A1E002A4D8B /* DateUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -73,14 +113,16 @@
 		EBA684F128D3799B000C541E /* GoodbyeMoney */ = {
 			isa = PBXGroup;
 			children = (
+				EB4B67EF28D87AFA002A4D8B /* Extensions */,
+				EB4B67E628D86FFE002A4D8B /* Components */,
 				EB510B7528D4D51500D3C07B /* Utilities */,
 				EBA6850A28D3885B000C541E /* Models */,
-				EBA6850128D37A20000C541E /* Components */,
 				EBA6850028D37A12000C541E /* Screens */,
 				EBA684F228D3799B000C541E /* GoodbyeMoneyApp.swift */,
 				EBA684F428D3799B000C541E /* ContentView.swift */,
 				EBA684F628D3799C000C541E /* Assets.xcassets */,
 				EBA684F828D3799C000C541E /* Preview Content */,
+				EB4B67F228D88198002A4D8B /* MockExpenses.swift */,
 			);
 			path = GoodbyeMoney;
 			sourceTree = "<group>";
@@ -105,17 +147,13 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		EBA6850128D37A20000C541E /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		EBA6850A28D3885B000C541E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				EBA6850B28D38867000C541E /* Category.swift */,
+				EB4B67EB28D8759C002A4D8B /* Expense.swift */,
+				EB4B67ED28D87616002A4D8B /* Currency.swift */,
+				EB4B67F428D881D4002A4D8B /* Recurrence.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,13 +228,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4B67EC28D8759C002A4D8B /* Expense.swift in Sources */,
 				EBA6850328D37A58000C541E /* Expenses.swift in Sources */,
+				EB4B67FB28D8A504002A4D8B /* Tag.swift in Sources */,
 				EBA684F528D3799B000C541E /* ContentView.swift in Sources */,
 				EBA684F328D3799B000C541E /* GoodbyeMoneyApp.swift in Sources */,
 				EBA6850528D37A6B000C541E /* Reports.swift in Sources */,
-				EB510B7728D4D51E00D3C07B /* Keyboard.swift in Sources */,
+				EB510B7728D4D51E00D3C07B /* KeyboardUtils.swift in Sources */,
+				EB4B67F128D87B03002A4D8B /* Double.swift in Sources */,
+				EB4B67F928D88A1E002A4D8B /* DateUtils.swift in Sources */,
 				EBA6850728D37D04000C541E /* Settings.swift in Sources */,
 				EB510B7428D4CC1900D3C07B /* Add.swift in Sources */,
+				EB4B67F728D887B9002A4D8B /* ExpensesUtils.swift in Sources */,
+				EB4B67F528D881D4002A4D8B /* Recurrence.swift in Sources */,
+				EB4B67EE28D87616002A4D8B /* Currency.swift in Sources */,
+				EB4B67E828D8700E002A4D8B /* TotalCurrencyBox.swift in Sources */,
+				EB4B67EA28D87376002A4D8B /* ExpensesList.swift in Sources */,
+				EB4B67F328D88198002A4D8B /* MockExpenses.swift in Sources */,
 				EBA6850928D37EC2000C541E /* Categories.swift in Sources */,
 				EBA6850C28D38867000C541E /* Category.swift in Sources */,
 			);
@@ -330,11 +378,12 @@
 				DEVELOPMENT_TEAM = 7XX8K2NVSG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -360,11 +409,12 @@
 				DEVELOPMENT_TEAM = 7XX8K2NVSG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
