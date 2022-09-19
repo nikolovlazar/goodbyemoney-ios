@@ -7,6 +7,27 @@
 
 import Foundation
 
+func parseDate(_ date: String) -> Date {
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+    dateFormatter.dateFormat = "E, d MMM yyyy"
+    
+    var parsedDate = dateFormatter.date(from: date)
+    
+    if parsedDate == nil {
+        let currentYear = Calendar.current.component(.year, from: Date())
+        dateFormatter.dateFormat = "E, d MMM"
+        parsedDate = dateFormatter.date(from: date)
+        
+        var components = Calendar.current.dateComponents([.year, .day, .month], from: parsedDate!)
+        components.setValue(currentYear, for: .year)
+        
+        parsedDate = Calendar.current.date(from: components)
+    }
+    
+    return parsedDate!
+}
+
 func formatDateToShort(_ date: Date) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "E, d MMM yyyy"

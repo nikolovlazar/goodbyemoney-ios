@@ -9,13 +9,27 @@ import SwiftUI
 
 struct ExpensesList: View {
     let expenses = groupExpensesByDate(mockExpenses)
+    
+    func getHeaderText(_ date: String) -> String {
+        let headerDate = parseDate(date)
+        
+        if Calendar.current.isDateInToday(headerDate) {
+            return "Today"
+        }
+        
+        if Calendar.current.isDateInYesterday(headerDate) {
+            return "Yesterday"
+        }
+        
+        return date
+    }
 
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 24) {
                 ForEach(Array(expenses), id: \.key) { key, value in
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("\(key)")
+                        Text("\(getHeaderText(key))")
                             .font(.headline)
                             .foregroundColor(.secondary)
                         
