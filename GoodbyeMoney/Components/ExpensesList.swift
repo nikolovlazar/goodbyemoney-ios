@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExpensesList: View {
+    var inputExpenses: [Expense]
     let expenses = groupExpensesByDate(mockExpenses)
     
     func getHeaderText(_ date: String) -> String {
@@ -36,7 +37,7 @@ struct ExpensesList: View {
                         Divider()
                         
                         ForEach(value, id: \.id) { expense in
-                            VStack(spacing: 3) {
+                            VStack(spacing: 4) {
                                 HStack {
                                     Text(expense.note ?? expense.category.name)
                                         .font(.headline)
@@ -47,6 +48,19 @@ struct ExpensesList: View {
                                 }
                                 HStack {
                                     Tag(label: expense.category.name, color: expense.category.color)
+                                    
+                                    if expense.recurrence != nil && expense.recurrence != Recurrence.none {
+                                        Image(systemName: "repeat")
+                                            .frame(width: 6, height: 6)
+                                            .foregroundColor(.secondary)
+                                            .padding(.leading, 6)
+                                        
+                                        Text(expense.recurrence!.rawValue)
+                                            .font(.footnote)
+                                            .foregroundColor(.secondary)
+                                            .padding(.leading, 4)
+                                    }
+                                    
                                     Spacer()
                                     Text(formatDate(expense.date, format: "HH:mm"))
                                         .font(.body)
@@ -83,6 +97,6 @@ struct ExpensesList: View {
 
 struct ExpensesList_Previews: PreviewProvider {
     static var previews: some View {
-        ExpensesList()
+        ExpensesList(inputExpenses: mockExpenses)
     }
 }

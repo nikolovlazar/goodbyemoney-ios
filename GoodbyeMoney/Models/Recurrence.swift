@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Recurrence {
-    case none, daily, weekly, monthly, yearly
+enum Recurrence: String {
+    case none = "None", daily = "Daily", weekly = "Weekly", monthly = "Monthy", yearly = "Yearly"
 }

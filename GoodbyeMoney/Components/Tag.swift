@@ -18,7 +18,7 @@ struct Tag: View {
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
             .background(color.opacity(0.4))
-            .cornerRadius(112)
+            .cornerRadius(8)
     }
 }
 

@@ -48,7 +48,7 @@ struct Expenses: View {
                 }
                 .padding(.horizontal, 16)
                 
-                ExpensesList()
+                ExpensesList(inputExpenses: mockExpenses)
             }
             .frame(
               minWidth: 0,
