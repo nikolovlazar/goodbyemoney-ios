@@ -29,7 +29,6 @@
 		EBA6850728D37D04000C541E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850628D37D04000C541E /* Settings.swift */; };
 		EBA6850928D37EC2000C541E /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850828D37EC2000C541E /* Categories.swift */; };
 		EBA6850C28D38867000C541E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850B28D38867000C541E /* Category.swift */; };
-		EBAA375228DB1A1400A38587 /* env.sh in Resources */ = {isa = PBXBuildFile; fileRef = EBAA375128DB1A1400A38587 /* env.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,7 +249,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBAA375228DB1A1400A38587 /* env.sh in Resources */,
 				EBA684FA28D3799C000C541E /* Preview Assets.xcassets in Resources */,
 				EBA684F728D3799C000C541E /* Assets.xcassets in Resources */,
 			);
