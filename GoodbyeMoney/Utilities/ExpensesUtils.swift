@@ -4,13 +4,16 @@
 //
 //  Created by Lazar Nikolov on 2022-09-19.
 //
-
+import Sentry
 import Foundation
 
 typealias ExpenseInDate = [String: [Expense]]
 func groupExpensesByDate(_ expenses: [Expense]) -> [Dictionary<String, [Expense]>.Element] {
+    let transaction = SentrySDK.startTransaction(name: "expenses", operation: "render-expenses")
+    
     var result: ExpenseInDate = [:]
     
+    let groupSpan = transaction.startChild(operation: "group-expenses", description: "group expenses by date")
     for expense in expenses {
         let expenseDate = formatDateToShort(expense.date)
         
@@ -20,7 +23,9 @@ func groupExpensesByDate(_ expenses: [Expense]) -> [Dictionary<String, [Expense]
         
         result[expenseDate]!.append(expense)
     }
+    groupSpan.finish()
     
+    let sortSpan = transaction.startChild(operation: "sort-expenses", description: "sort expenses")
     let sorted = result.sorted {
         if ($0.key == "Today" || $0.key == "Yesterday") {
             return true
@@ -31,6 +36,9 @@ func groupExpensesByDate(_ expenses: [Expense]) -> [Dictionary<String, [Expense]
         
         return date0.compare(date1) == .orderedDescending
     }
+    sortSpan.finish()
+    
+    transaction.finish()
     
     return sorted
 }

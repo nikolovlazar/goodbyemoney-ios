@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		903B0A89857736BE5E38D2A2 /* Pods_GoodbyeMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C97110712A3DBA5AF2E1A94 /* Pods_GoodbyeMoney.framework */; };
 		EB4B67E828D8700E002A4D8B /* TotalCurrencyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67E728D8700E002A4D8B /* TotalCurrencyBox.swift */; };
 		EB4B67EA28D87376002A4D8B /* ExpensesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67E928D87376002A4D8B /* ExpensesList.swift */; };
 		EB4B67EC28D8759C002A4D8B /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67EB28D8759C002A4D8B /* Expense.swift */; };
@@ -31,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0386E1ADA63C9B5BC7B32382 /* Pods-GoodbyeMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodbyeMoney.debug.xcconfig"; path = "Target Support Files/Pods-GoodbyeMoney/Pods-GoodbyeMoney.debug.xcconfig"; sourceTree = "<group>"; };
+		319E166A1DD883EF1631D1B1 /* Pods-GoodbyeMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodbyeMoney.release.xcconfig"; path = "Target Support Files/Pods-GoodbyeMoney/Pods-GoodbyeMoney.release.xcconfig"; sourceTree = "<group>"; };
+		5C97110712A3DBA5AF2E1A94 /* Pods_GoodbyeMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodbyeMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB1F724028DA30780033A424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB4B67E728D8700E002A4D8B /* TotalCurrencyBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCurrencyBox.swift; sourceTree = "<group>"; };
 		EB4B67E928D87376002A4D8B /* ExpensesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesList.swift; sourceTree = "<group>"; };
 		EB4B67EB28D8759C002A4D8B /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -60,12 +65,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903B0A89857736BE5E38D2A2 /* Pods_GoodbyeMoney.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2A34DB390FC07BE3FB5C33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0386E1ADA63C9B5BC7B32382 /* Pods-GoodbyeMoney.debug.xcconfig */,
+				319E166A1DD883EF1631D1B1 /* Pods-GoodbyeMoney.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5A3ED57F18D2FA220920ACBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C97110712A3DBA5AF2E1A94 /* Pods_GoodbyeMoney.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB4B67E628D86FFE002A4D8B /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +122,8 @@
 			children = (
 				EBA684F128D3799B000C541E /* GoodbyeMoney */,
 				EBA684F028D3799B000C541E /* Products */,
+				0F2A34DB390FC07BE3FB5C33 /* Pods */,
+				5A3ED57F18D2FA220920ACBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +138,7 @@
 		EBA684F128D3799B000C541E /* GoodbyeMoney */ = {
 			isa = PBXGroup;
 			children = (
+				EB1F724028DA30780033A424 /* Info.plist */,
 				EB4B67EF28D87AFA002A4D8B /* Extensions */,
 				EB4B67E628D86FFE002A4D8B /* Components */,
 				EB510B7528D4D51500D3C07B /* Utilities */,
@@ -165,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBA684FD28D3799C000C541E /* Build configuration list for PBXNativeTarget "GoodbyeMoney" */;
 			buildPhases = (
+				7F1275EAFB239BC97761801B /* [CP] Check Pods Manifest.lock */,
 				EBA684EB28D3799B000C541E /* Sources */,
 				EBA684EC28D3799B000C541E /* Frameworks */,
 				EBA684ED28D3799B000C541E /* Resources */,
+				24B044B88474BAED24E08D39 /* [CP] Embed Pods Frameworks */,
+				EBAA374E28DAFE5400A38587 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -222,6 +251,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24B044B88474BAED24E08D39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodbyeMoney/Pods-GoodbyeMoney-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodbyeMoney/Pods-GoodbyeMoney-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoodbyeMoney/Pods-GoodbyeMoney-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F1275EAFB239BC97761801B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodbyeMoney-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBAA374E28DAFE5400A38587 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=lazars-experiments\nexport SENTRY_PROJECT=goodbye-money-ios\nexport SENTRY_AUTH_TOKEN=e88ede27bc844b8ab847f7e4f0096d8e0cc4c8040d4146009b84b72866aa7c0b\nERROR=$(sentry-cli upload-dif \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"error: sentry-cli - $ERROR\"\nfi\nelse\necho \"error: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBA684EB28D3799B000C541E /* Sources */ = {
@@ -369,19 +458,22 @@
 		};
 		EBA684FE28D3799C000C541E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0386E1ADA63C9B5BC7B32382 /* Pods-GoodbyeMoney.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"GoodbyeMoney/Preview Content\"";
 				DEVELOPMENT_TEAM = 7XX8K2NVSG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodbyeMoney/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -390,7 +482,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolovlazar.GoodbyeMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -404,19 +496,22 @@
 		};
 		EBA684FF28D3799C000C541E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 319E166A1DD883EF1631D1B1 /* Pods-GoodbyeMoney.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"GoodbyeMoney/Preview Content\"";
 				DEVELOPMENT_TEAM = 7XX8K2NVSG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodbyeMoney/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -425,7 +520,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolovlazar.GoodbyeMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
