@@ -1,0 +1,3 @@
+export SENTRY_ORG=
+export SENTRY_PROJECT=
+export SENTRY_AUTH_TOKEN=

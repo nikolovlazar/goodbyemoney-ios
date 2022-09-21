@@ -29,6 +29,7 @@
 		EBA6850728D37D04000C541E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850628D37D04000C541E /* Settings.swift */; };
 		EBA6850928D37EC2000C541E /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850828D37EC2000C541E /* Categories.swift */; };
 		EBA6850C28D38867000C541E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6850B28D38867000C541E /* Category.swift */; };
+		EBAA375228DB1A1400A38587 /* env.sh in Resources */ = {isa = PBXBuildFile; fileRef = EBAA375128DB1A1400A38587 /* env.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		EBA6850628D37D04000C541E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		EBA6850828D37EC2000C541E /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		EBA6850B28D38867000C541E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		EBAA375128DB1A1400A38587 /* env.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = env.sh; sourceTree = "<group>"; };
+		EBAA375328DB1BF700A38587 /* env.sample.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = env.sample.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 				EBA684F628D3799C000C541E /* Assets.xcassets */,
 				EBA684F828D3799C000C541E /* Preview Content */,
 				EB4B67F228D88198002A4D8B /* MockExpenses.swift */,
+				EBAA375128DB1A1400A38587 /* env.sh */,
+				EBAA375328DB1BF700A38587 /* env.sample.sh */,
 			);
 			path = GoodbyeMoney;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBAA375228DB1A1400A38587 /* env.sh in Resources */,
 				EBA684FA28D3799C000C541E /* Preview Assets.xcassets in Resources */,
 				EBA684F728D3799C000C541E /* Assets.xcassets in Resources */,
 			);
@@ -308,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n\nif which sentry-cli >/dev/null; then\nERROR=$(sentry-cli upload-dif \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"error: sentry-cli - $ERROR\"\nexit 1\nfi\nelse\necho \"error: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+			shellScript = "source $SRCROOT/GoodbyeMoney/env.sh\n\nif which sentry-cli >/dev/null; then\nERROR=$(sentry-cli upload-dif \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"error: sentry-cli - $ERROR\"\nexit 1\nfi\nelse\necho \"error: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -1,4 +1,6 @@
 *.xcscheme
+**/env.sh
+
 
 # Xcode
 #
