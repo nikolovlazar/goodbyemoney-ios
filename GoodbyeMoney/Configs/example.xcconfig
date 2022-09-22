@@ -9,6 +9,7 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 #include "Pods/Target Support Files/Pods-GoodbyeMoney/Pods-GoodbyeMoney.[debug/release].xcconfig"
 
-SENTRY_ENV = ""
+SENTRY_DSN = [dsn without the "https://": (***.ingest.sentry.io\/**)]
+SENTRY_ENVIRONMENT = [development/production]
 SENTRY_TRACES_SAMPLE_RATE = 1.0
 SENTRY_PROFILES_SAMPLE_RATE = 1.0

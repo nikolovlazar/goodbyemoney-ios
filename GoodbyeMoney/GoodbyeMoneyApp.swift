@@ -11,8 +11,13 @@ import SwiftUI
 struct GoodbyeMoneyApp: App {
     init() {
         SentrySDK.start { options in
+            if let dsn = Bundle.main.infoDictionary?["SENTRY_DSN"] as? String {
+                let fullDsn = "https://\(dsn)"
+                options.dsn = fullDsn
+            }
             if let env = Bundle.main.infoDictionary?["SENTRY_ENVIRONMENT"] as? String {
-                options.debug = env == "development"
+                let debug = env.compare("development") == .orderedSame
+                options.debug = debug
                 options.environment = env
             }
             if let tracesSampleRate = Bundle.main.infoDictionary?["SENTRY_TRACES_SAMPLE_RATE"] as? String {
@@ -21,6 +26,7 @@ struct GoodbyeMoneyApp: App {
             if let profilesSampleRate = Bundle.main.infoDictionary?["SENTRY_PROFILES_SAMPLE_RATE"] as? String {
                 options.profilesSampleRate = NSNumber(value: Double(profilesSampleRate)!)
             }
+            
             options.enableAppHangTracking = true
             options.enableUserInteractionTracing = true
             options.attachViewHierarchy = true
