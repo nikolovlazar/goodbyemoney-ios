@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>SENTRY_ENVIRONMENT</key>
+	<string>$(SENTRY_ENVIRONMENT)</string>
+	<key>SENTRY_PROFILES_SAMPLE_RATE</key>
+	<string>$(SENTRY_PROFILES_SAMPLE_RATE)</string>
+	<key>SENTRY_TRACES_SAMPLE_RATE</key>
+	<string>$(SENTRY_TRACES_SAMPLE_RATE)</string>
+</dict>
 </plist>

@@ -11,13 +11,19 @@ import SwiftUI
 struct GoodbyeMoneyApp: App {
     init() {
         SentrySDK.start { options in
-            options.dsn = ProcessInfo.processInfo.environment["SENTRY_DSN"]
-            options.debug = true // Enabled debug when first installing is always helpful
-            options.environment = ProcessInfo.processInfo.environment["SENTRY_ENV"]
-            
-            // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-            // We recommend adjusting this value in production.
-            options.tracesSampleRate = NSNumber(value: (ProcessInfo.processInfo.environment["SENTRY_TRACES_SAMPLE_RATE"]! as NSString).integerValue)
+            if let env = Bundle.main.infoDictionary?["SENTRY_ENVIRONMENT"] as? String {
+                options.debug = env == "development"
+                options.environment = env
+            }
+            if let tracesSampleRate = Bundle.main.infoDictionary?["SENTRY_TRACES_SAMPLE_RATE"] as? String {
+                options.tracesSampleRate = NSNumber(value: Double(tracesSampleRate)!)
+            }
+            if let profilesSampleRate = Bundle.main.infoDictionary?["SENTRY_PROFILES_SAMPLE_RATE"] as? String {
+                options.profilesSampleRate = NSNumber(value: Double(profilesSampleRate)!)
+            }
+            options.enableAppHangTracking = true
+            options.enableUserInteractionTracing = true
+            options.attachViewHierarchy = true
         }
     }
     

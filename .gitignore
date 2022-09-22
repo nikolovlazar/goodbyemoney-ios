@@ -25,3 +25,5 @@ DerivedData
 Podfile.lock
 Pods
 *.xcworkspace
+GoodbyeMoney/Configs/*.xcconfig
+!GoodbyeMoney/Configs/example.xcconfig
