@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct Settings: View {
     @State private var showEraseConfirmation = false
@@ -30,7 +31,10 @@ struct Settings: View {
                         title: Text("Are you sure?"),
                         message: Text("This action cannot be undone."),
                         primaryButton: .destructive(Text("Erase data")) {
-                            //TODO: boom!
+                            let realm = try! Realm()
+                            realm.beginWrite()
+                            realm.deleteAll()
+                            try! realm.commitWrite()
                         },
                         secondaryButton: .cancel()
                     )

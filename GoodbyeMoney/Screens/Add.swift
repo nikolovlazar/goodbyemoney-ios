@@ -6,14 +6,18 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct Add: View {
+    @EnvironmentObject var realmManager: RealmManager
+    
+    @State private var selectedCategory: Category = Category()
+
     @State private var amount = ""
     @State private var currency = Currency.USD
     @State private var recurrence = Recurrence.none
     @State private var date = Date()
     @State private var note = ""
-    @State private var category = "groceries"
     
     var dateClosedRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .year, value: -1, to: Date())!
@@ -22,6 +26,19 @@ struct Add: View {
     }
     
     func handleCreate() {
+        self.realmManager.submitExpense(Expense(
+            currency: self.currency,
+            amount: Double(self.amount)!,
+            category: self.selectedCategory,
+            date: self.date,
+            note: self.note,
+            recurrence: self.recurrence
+        ))
+        self.amount = ""
+        self.currency = Currency.USD
+        self.recurrence = Recurrence.none
+        self.date = Date()
+        self.note = ""
         hideKeyboard()
     }
     
@@ -83,12 +100,10 @@ struct Add: View {
                     HStack {
                         Text("Category")
                         Spacer()
-                        Picker(selection: $category, label: Text(""), content: {
-                            Text("Groceries").tag("groceries")
-                            Text("Bills").tag("bills")
-                            Text("Hobbies").tag("hobbies")
-                            Text("Subscriptions").tag("subscriptions")
-                            Text("Gas").tag("gas")
+                        Picker(selection: $selectedCategory, label: Text(""), content: {
+                            ForEach(realmManager.categories) { category in
+                                Text(category.name).tag(category)
+                            }
                         })
                     }
                 }

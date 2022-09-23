@@ -13,13 +13,18 @@
 		EB4B67EC28D8759C002A4D8B /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67EB28D8759C002A4D8B /* Expense.swift */; };
 		EB4B67EE28D87616002A4D8B /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67ED28D87616002A4D8B /* Currency.swift */; };
 		EB4B67F128D87B03002A4D8B /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F028D87B03002A4D8B /* Double.swift */; };
-		EB4B67F328D88198002A4D8B /* MockExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F228D88198002A4D8B /* MockExpenses.swift */; };
 		EB4B67F528D881D4002A4D8B /* Recurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F428D881D4002A4D8B /* Recurrence.swift */; };
 		EB4B67F728D887B9002A4D8B /* ExpensesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F628D887B9002A4D8B /* ExpensesUtils.swift */; };
 		EB4B67F928D88A1E002A4D8B /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67F828D88A1E002A4D8B /* DateUtils.swift */; };
 		EB4B67FB28D8A504002A4D8B /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67FA28D8A504002A4D8B /* Tag.swift */; };
 		EB510B7428D4CC1900D3C07B /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB510B7328D4CC1900D3C07B /* Add.swift */; };
 		EB510B7728D4D51E00D3C07B /* KeyboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB510B7628D4D51E00D3C07B /* KeyboardUtils.swift */; };
+		EB97131328DDA22F00AB19AE /* PeriodChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97131228DDA22F00AB19AE /* PeriodChart.swift */; };
+		EB97131528DDA23C00AB19AE /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97131428DDA23C00AB19AE /* Period.swift */; };
+		EB97131828DDA61600AB19AE /* ExpensesBreakdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97131728DDA61600AB19AE /* ExpensesBreakdown.swift */; };
+		EB97131C28DDB21500AB19AE /* WeekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97131B28DDB21500AB19AE /* WeekChart.swift */; };
+		EB97131E28DDE96900AB19AE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97131D28DDE96900AB19AE /* Color.swift */; };
+		EB97132028DE03CF00AB19AE /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97131F28DE03CF00AB19AE /* RealmManager.swift */; };
 		EBA684F328D3799B000C541E /* GoodbyeMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA684F228D3799B000C541E /* GoodbyeMoneyApp.swift */; };
 		EBA684F528D3799B000C541E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA684F428D3799B000C541E /* ContentView.swift */; };
 		EBA684F728D3799C000C541E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA684F628D3799C000C541E /* Assets.xcassets */; };
@@ -44,13 +49,18 @@
 		EB4B67EB28D8759C002A4D8B /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		EB4B67ED28D87616002A4D8B /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		EB4B67F028D87B03002A4D8B /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		EB4B67F228D88198002A4D8B /* MockExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExpenses.swift; sourceTree = "<group>"; };
 		EB4B67F428D881D4002A4D8B /* Recurrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurrence.swift; sourceTree = "<group>"; };
 		EB4B67F628D887B9002A4D8B /* ExpensesUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesUtils.swift; sourceTree = "<group>"; };
 		EB4B67F828D88A1E002A4D8B /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		EB4B67FA28D8A504002A4D8B /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		EB510B7328D4CC1900D3C07B /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
 		EB510B7628D4D51E00D3C07B /* KeyboardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUtils.swift; sourceTree = "<group>"; };
+		EB97131228DDA22F00AB19AE /* PeriodChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodChart.swift; sourceTree = "<group>"; };
+		EB97131428DDA23C00AB19AE /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		EB97131728DDA61600AB19AE /* ExpensesBreakdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesBreakdown.swift; sourceTree = "<group>"; };
+		EB97131B28DDB21500AB19AE /* WeekChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekChart.swift; sourceTree = "<group>"; };
+		EB97131D28DDE96900AB19AE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		EB97131F28DE03CF00AB19AE /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		EBA684EF28D3799B000C541E /* GoodbyeMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodbyeMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA684F228D3799B000C541E /* GoodbyeMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodbyeMoneyApp.swift; sourceTree = "<group>"; };
 		EBA684F428D3799B000C541E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +117,7 @@
 		EB4B67E628D86FFE002A4D8B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EB97131628DDA56700AB19AE /* Charts */,
 				EB4B67E728D8700E002A4D8B /* TotalCurrencyBox.swift */,
 				EB4B67E928D87376002A4D8B /* ExpensesList.swift */,
 				EB4B67FA28D8A504002A4D8B /* Tag.swift */,
@@ -128,8 +139,19 @@
 				EB510B7628D4D51E00D3C07B /* KeyboardUtils.swift */,
 				EB4B67F628D887B9002A4D8B /* ExpensesUtils.swift */,
 				EB4B67F828D88A1E002A4D8B /* DateUtils.swift */,
+				EB97131D28DDE96900AB19AE /* Color.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EB97131628DDA56700AB19AE /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				EB97131228DDA22F00AB19AE /* PeriodChart.swift */,
+				EB97131728DDA61600AB19AE /* ExpensesBreakdown.swift */,
+				EB97131B28DDB21500AB19AE /* WeekChart.swift */,
+			);
+			path = Charts;
 			sourceTree = "<group>";
 		};
 		EBA684E628D3799B000C541E = {
@@ -164,9 +186,9 @@
 				EBA684F428D3799B000C541E /* ContentView.swift */,
 				EBA684F628D3799C000C541E /* Assets.xcassets */,
 				EBA684F828D3799C000C541E /* Preview Content */,
-				EB4B67F228D88198002A4D8B /* MockExpenses.swift */,
 				EBAA375128DB1A1400A38587 /* env.sh */,
 				EBAA375328DB1BF700A38587 /* env.sample.sh */,
+				EB97131F28DE03CF00AB19AE /* RealmManager.swift */,
 			);
 			path = GoodbyeMoney;
 			sourceTree = "<group>";
@@ -198,6 +220,7 @@
 				EB4B67EB28D8759C002A4D8B /* Expense.swift */,
 				EB4B67ED28D87616002A4D8B /* Currency.swift */,
 				EB4B67F428D881D4002A4D8B /* Recurrence.swift */,
+				EB97131428DDA23C00AB19AE /* Period.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,7 +335,7 @@
 		};
 		EBAA374E28DAFE5400A38587 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -324,7 +347,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "source $SRCROOT/GoodbyeMoney/env.sh\n\nif which sentry-cli >/dev/null; then\nERROR=$(sentry-cli upload-dif \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"error: sentry-cli - $ERROR\"\nfi\nelse\necho \"error: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
 		};
@@ -340,6 +363,7 @@
 				EB4B67FB28D8A504002A4D8B /* Tag.swift in Sources */,
 				EBA684F528D3799B000C541E /* ContentView.swift in Sources */,
 				EBA684F328D3799B000C541E /* GoodbyeMoneyApp.swift in Sources */,
+				EB97131E28DDE96900AB19AE /* Color.swift in Sources */,
 				EBA6850528D37A6B000C541E /* Reports.swift in Sources */,
 				EB510B7728D4D51E00D3C07B /* KeyboardUtils.swift in Sources */,
 				EB4B67F128D87B03002A4D8B /* Double.swift in Sources */,
@@ -348,10 +372,14 @@
 				EB510B7428D4CC1900D3C07B /* Add.swift in Sources */,
 				EB4B67F728D887B9002A4D8B /* ExpensesUtils.swift in Sources */,
 				EB4B67F528D881D4002A4D8B /* Recurrence.swift in Sources */,
+				EB97131528DDA23C00AB19AE /* Period.swift in Sources */,
+				EB97131328DDA22F00AB19AE /* PeriodChart.swift in Sources */,
+				EB97131C28DDB21500AB19AE /* WeekChart.swift in Sources */,
+				EB97132028DE03CF00AB19AE /* RealmManager.swift in Sources */,
 				EB4B67EE28D87616002A4D8B /* Currency.swift in Sources */,
 				EB4B67E828D8700E002A4D8B /* TotalCurrencyBox.swift in Sources */,
 				EB4B67EA28D87376002A4D8B /* ExpensesList.swift in Sources */,
-				EB4B67F328D88198002A4D8B /* MockExpenses.swift in Sources */,
+				EB97131828DDA61600AB19AE /* ExpensesBreakdown.swift in Sources */,
 				EBA6850928D37EC2000C541E /* Categories.swift in Sources */,
 				EBA6850C28D38867000C541E /* Category.swift in Sources */,
 			);
@@ -362,7 +390,6 @@
 /* Begin XCBuildConfiguration section */
 		EBA684FB28D3799C000C541E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB1B6B5728DC97B400DE0291 /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -423,7 +450,6 @@
 		};
 		EBA684FC28D3799C000C541E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB1B6B5828DC991100DE0291 /* release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -478,6 +504,7 @@
 		};
 		EBA684FE28D3799C000C541E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB1B6B5728DC97B400DE0291 /* debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -515,6 +542,7 @@
 		};
 		EBA684FF28D3799C000C541E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB1B6B5828DC991100DE0291 /* release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

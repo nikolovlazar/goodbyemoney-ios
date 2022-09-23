@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum Recurrence: String {
-    case none = "None", daily = "Daily", weekly = "Weekly", monthly = "Monthy", yearly = "Yearly"
+enum Recurrence: String, PersistableEnum, CaseIterable {
+    case none = "None"
+    case daily = "Daily"
+    case weekly = "Weekly"
+    case monthly = "Monthy"
+    case yearly = "Yearly"
 }

@@ -48,11 +48,11 @@ func totalExpensesByCurrency(_ expenses: [Expense]) -> [Dictionary<Currency, Dou
     var result: ExpenseInCurrency = [:]
     
     for expense in expenses {
-        if result[expense.currency] == nil {
-            result[expense.currency] = 0
+        if result[expense.currency!] == nil {
+            result[expense.currency!] = 0
         }
         
-        result[expense.currency] = result[expense.currency]! + expense.amount
+        result[expense.currency!] = result[expense.currency!]! + expense.amount
     }
     
     let sorted = result.sorted {
@@ -60,4 +60,8 @@ func totalExpensesByCurrency(_ expenses: [Expense]) -> [Dictionary<Currency, Dou
     }
     
     return sorted
+}
+
+func expensesInPeriod() {
+    
 }

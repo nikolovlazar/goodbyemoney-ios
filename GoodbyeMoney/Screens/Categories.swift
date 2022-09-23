@@ -6,20 +6,17 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct Categories: View {
     @State private var isAlertShowing = false
     @State private var newCategoryName: String = ""
     @State private var newCategoryColor = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
-    @State private var categories: [Category] = [
-        Category(name: "Groceries", color: .blue),
-        Category(name: "Bills", color: .purple),
-        Category(name: "Subscriptions", color: .red),
-    ]
+    @ObservedResults(Category.self) var categories
     
     func handleSubmit() {
         if newCategoryName.count > 0 {
-            categories.append(Category(
+            $categories.append(Category(
                 name: newCategoryName,
                 color: newCategoryColor
             ))
@@ -30,7 +27,7 @@ struct Categories: View {
     }
     
     func handleDelete(at offsets: IndexSet) {
-        categories.remove(atOffsets: offsets)
+        $categories.remove(atOffsets: offsets)
     }
     
     var body: some View {

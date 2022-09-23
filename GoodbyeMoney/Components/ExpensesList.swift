@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ExpensesList: View {
-    var inputExpenses: [Expense]
-    let expenses = groupExpensesByDate(mockExpenses)
+    var expenses: [Dictionary<String, [Expense]>.Element]
     
     func getHeaderText(_ date: String) -> String {
         let headerDate = parseDate(date)
@@ -39,15 +38,15 @@ struct ExpensesList: View {
                         ForEach(value, id: \.id) { expense in
                             VStack(spacing: 4) {
                                 HStack {
-                                    Text(expense.note ?? expense.category.name)
+                                    Text(expense.note ?? expense.category!.name)
                                         .font(.headline)
                                     
                                     Spacer()
                                     
-                                    Text("\(expense.currency.rawValue) \(expense.amount.roundTo(2))")
+                                    Text("\(expense.currency!.rawValue) \(expense.amount.roundTo(2))")
                                 }
                                 HStack {
-                                    Tag(label: expense.category.name, color: expense.category.color)
+                                    Tag(label: expense.category!.name, color: expense.category!.color)
                                     
                                     if expense.recurrence != nil && expense.recurrence != Recurrence.none {
                                         Image(systemName: "repeat")
@@ -97,6 +96,6 @@ struct ExpensesList: View {
 
 struct ExpensesList_Previews: PreviewProvider {
     static var previews: some View {
-        ExpensesList(inputExpenses: mockExpenses)
+        ExpensesList(expenses: [])
     }
 }

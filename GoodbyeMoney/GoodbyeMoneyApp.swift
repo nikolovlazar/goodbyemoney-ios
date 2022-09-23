@@ -5,10 +5,11 @@
 //  Created by Lazar Nikolov on 2022-09-15.
 //
 import Sentry
+import RealmSwift
 import SwiftUI
 
 @main
-struct GoodbyeMoneyApp: App {
+struct GoodbyeMoneyApp: SwiftUI.App {
     init() {
         SentrySDK.start { options in
             if let dsn = Bundle.main.infoDictionary?["SENTRY_DSN"] as? String {
