@@ -43,25 +43,6 @@ func groupExpensesByDate(_ expenses: [Expense]) -> [Dictionary<String, [Expense]
     return sorted
 }
 
-typealias ExpenseInCurrency = [Currency: Double]
-func totalExpensesByCurrency(_ expenses: [Expense]) -> [Dictionary<Currency, Double>.Element] {
-    var result: ExpenseInCurrency = [:]
-    
-    for expense in expenses {
-        if result[expense.currency!] == nil {
-            result[expense.currency!] = 0
-        }
-        
-        result[expense.currency!] = result[expense.currency!]! + expense.amount
-    }
-    
-    let sorted = result.sorted {
-        return $0.key.rawValue.compare($1.key.rawValue) == .orderedDescending
-    }
-    
-    return sorted
-}
-
 func expensesInPeriod() {
     
 }

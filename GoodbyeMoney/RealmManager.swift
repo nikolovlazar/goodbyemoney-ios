@@ -70,4 +70,34 @@ class RealmManager: ObservableObject {
             }
         }
     }
+    
+    func submitCategory(_ category: Category) {
+        if let localRealm = localRealm {
+            do {
+                try localRealm.write {
+                    localRealm.add(category)
+                    
+                    loadCategories()
+                    print("Category submitted to Realm!", category)
+                }
+            } catch {
+                print("Error submitting category to Realm: \(error)")
+            }
+        }
+    }
+    
+    func deleteCategory(category: Category) {
+        if let localRealm = localRealm {
+            do {
+                try localRealm.write {
+                    localRealm.delete(category)
+                    
+                    loadCategories()
+                    print("Category deleted from Realm!", category)
+                }
+            } catch {
+                print("Error deleting category to Realm: \(error)")
+            }
+        }
+    }
 }

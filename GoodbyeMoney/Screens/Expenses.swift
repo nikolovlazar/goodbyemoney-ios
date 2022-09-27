@@ -11,17 +11,6 @@ enum Filter {
     case day, week, month, year
 }
 
-struct CurrencyExpense {
-    var currency: Currency
-    var amount: Double
-}
-
-let totalsPerCurrency: [CurrencyExpense] = [
-    CurrencyExpense(currency: Currency.MKD, amount: 660),
-    CurrencyExpense(currency: Currency.USD, amount: 32),
-    CurrencyExpense(currency: Currency.CAD, amount: 55),
-]
-
 struct Expenses: View {
     @EnvironmentObject var realmManager: RealmManager
     @State private var searchQuery = ""
@@ -42,12 +31,12 @@ struct Expenses: View {
                     .foregroundColor(.white)
                 }
                 
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(totalsPerCurrency, id: \.currency) {
-                        TotalCurrencyBox(amount: $0.amount, currency: $0.currency)
-                    }
-                }
-                .padding(.horizontal, 16)
+//                LazyVGrid(columns: columns, spacing: 16) {
+//                    ForEach(totalsPerCurrency, id: \.currency) {
+//                        TotalCurrencyBox(amount: $0.amount, currency: $0.currency)
+//                    }
+//                }
+//                .padding(.horizontal, 16)
                 
                 ExpensesList(expenses: groupExpensesByDate(realmManager.expenses))
             }

@@ -9,31 +9,33 @@ import SwiftUI
 import RealmSwift
 
 struct Categories: View {
-    @State private var isAlertShowing = false
+    @EnvironmentObject var realmManager: RealmManager
+    
+    @State private var invalidDataAlertShowing = false
+    @State private var deleteConfirmationAlertShowing = false
     @State private var newCategoryName: String = ""
     @State private var newCategoryColor = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
-    @ObservedResults(Category.self) var categories
     
     func handleSubmit() {
         if newCategoryName.count > 0 {
-            $categories.append(Category(
+            self.realmManager.submitCategory(Category(
                 name: newCategoryName,
                 color: newCategoryColor
             ))
             newCategoryName = ""
         } else {
-            isAlertShowing = true
+            invalidDataAlertShowing = true
         }
     }
     
     func handleDelete(at offsets: IndexSet) {
-        $categories.remove(atOffsets: offsets)
+        realmManager.deleteCategory(category: realmManager.categories.index(1, offsetBy: offsets))
     }
     
     var body: some View {
         VStack {
             List {
-                ForEach(categories, id: \.name) { category in
+                ForEach(realmManager.categories, id: \.name) { category in
                     HStack {
                         Circle()
                             .frame(width: 12)
@@ -82,9 +84,9 @@ struct Categories: View {
                 .background(.blue)
                 .foregroundColor(.white)
                 .cornerRadius(6)
-                .alert("Must provide a category name!", isPresented: $isAlertShowing) {
+                .alert("Must provide a category name!", isPresented: $invalidDataAlertShowing) {
                     Button("OK", role: .cancel) {
-                        isAlertShowing = false
+                        invalidDataAlertShowing = false
                     }
                 }
             }

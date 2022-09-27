@@ -10,16 +10,14 @@ import RealmSwift
 
 class Expense: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var currency: Currency?
     @Persisted var amount: Double
     @Persisted var category: Category?
     @Persisted var date: Date
     @Persisted var note: String?
     @Persisted var recurrence: Recurrence? = Recurrence.none
     
-    convenience init(currency: Currency, amount: Double, category: Category, date: Date, note: String? = nil, recurrence: Recurrence? = nil) {
+    convenience init(amount: Double, category: Category, date: Date, note: String? = nil, recurrence: Recurrence? = nil) {
         self.init()
-        self.currency = currency
         self.amount = amount
         self.category = category
         self.date = date
@@ -31,6 +29,7 @@ class Expense: Object, ObjectKeyIdentifiable {
         get {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEEE"
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             let dayInWeek = dateFormatter.string(from: self.date)
             return dayInWeek
         }
@@ -40,6 +39,7 @@ class Expense: Object, ObjectKeyIdentifiable {
         get {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd"
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             let dayInMonth = Int(dateFormatter.string(from: self.date))!
             return dayInMonth
         }
@@ -49,6 +49,7 @@ class Expense: Object, ObjectKeyIdentifiable {
         get {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM"
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             let month = dateFormatter.string(from: self.date)
             return month
         }
@@ -58,6 +59,7 @@ class Expense: Object, ObjectKeyIdentifiable {
         get {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyy"
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             let year = Int(dateFormatter.string(from: self.date))!
             return year
         }

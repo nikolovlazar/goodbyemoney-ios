@@ -43,7 +43,7 @@ struct ExpensesList: View {
                                     
                                     Spacer()
                                     
-                                    Text("\(expense.currency!.rawValue) \(expense.amount.roundTo(2))")
+                                    Text("USD \(expense.amount.roundTo(2))")
                                 }
                                 HStack {
                                     Tag(label: expense.category!.name, color: expense.category!.color)
@@ -78,11 +78,9 @@ struct ExpensesList: View {
                             Spacer()
                             
                             VStack(alignment: .trailing) {
-                                ForEach(totalExpensesByCurrency(value), id: \.key) { key, value in
-                                    Text("\(key.rawValue) \(value.roundTo(2))")
-                                        .font(.headline)
-                                        .foregroundColor(.secondary)
-                                }
+                                Text("USD \(value.map{ $0.amount }.reduce(0, { $0 + $1 }).roundTo(2))")
+                                    .font(.headline)
+                                    .foregroundColor(.secondary)
                             }
                         }
                         .padding(.bottom, 12)

@@ -9,14 +9,13 @@ import SwiftUI
 
 struct TotalCurrencyBox: View {
     var amount: Double = 0
-    var currency: Currency = Currency.USD
     
     var body: some View {
         VStack(spacing: 12) {
             Text("\(amount.roundTo(2))")
                 .font(.title)
                 
-            Text("\(currency.rawValue)")
+            Text("USD")
                 .font(.headline)
                 .foregroundColor(.secondary)
         }

@@ -14,7 +14,6 @@ struct Add: View {
     @State private var selectedCategory: Category = Category()
 
     @State private var amount = ""
-    @State private var currency = Currency.USD
     @State private var recurrence = Recurrence.none
     @State private var date = Date()
     @State private var note = ""
@@ -27,15 +26,13 @@ struct Add: View {
     
     func handleCreate() {
         self.realmManager.submitExpense(Expense(
-            currency: self.currency,
             amount: Double(self.amount)!,
             category: self.selectedCategory,
             date: self.date,
-            note: self.note,
+            note: self.note.count == 0 ? self.selectedCategory.name : self.note,
             recurrence: self.recurrence
         ))
         self.amount = ""
-        self.currency = Currency.USD
         self.recurrence = Recurrence.none
         self.date = Date()
         self.note = ""
@@ -53,17 +50,6 @@ struct Add: View {
                             .multilineTextAlignment(.trailing)
                             .submitLabel(.done)
                             .keyboardType(.numberPad)
-                    }
-                    
-                    HStack {
-                        Text("Currency")
-                        Spacer()
-                        Picker(selection: $currency, label: Text(""), content: {
-                            Text("USD").tag(Currency.USD)
-                            Text("EUR").tag(Currency.EUR)
-                            Text("CAD").tag(Currency.CAD)
-                            Text("MKD").tag(Currency.MKD)
-                        })
                     }
                     
                     HStack {
