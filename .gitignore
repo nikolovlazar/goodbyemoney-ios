@@ -1,6 +1,6 @@
 *.xcscheme
 **/env.sh
-
+**/.DS_Store
 
 # Xcode
 #
