@@ -12,7 +12,6 @@ struct Categories: View {
     @EnvironmentObject var realmManager: RealmManager
     
     @State private var invalidDataAlertShowing = false
-    @State private var deleteConfirmationAlertShowing = false
     @State private var newCategoryName: String = ""
     @State private var newCategoryColor = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
     
@@ -29,7 +28,9 @@ struct Categories: View {
     }
     
     func handleDelete(at offsets: IndexSet) {
-        realmManager.deleteCategory(category: realmManager.categories.index(1, offsetBy: offsets))
+        if offsets.first != nil {
+            realmManager.deleteCategory(category: realmManager.categories[offsets.first!])
+        }
     }
     
     var body: some View {
