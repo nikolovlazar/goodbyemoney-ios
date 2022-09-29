@@ -8,58 +8,63 @@
 import SwiftUI
 import Charts
 
-typealias WeeklyExpenses = [String: Double]
-
 struct WeekChart: View {
-    var expenses: WeeklyExpenses = [
-        "Monday": 2860,
-        "Tuesday": 465,
-        "Wednesday": 613,
-        "Thursday": 1140,
-        "Friday": 520,
-        "Saturday": 850,
-        "Sunday": 2079
-    ]
+    var expenses: [Expense] = []
+    @State var displayExpenses: [String: Double] = [:]
+    
+    func calculateTotals() {
+        expenses.forEach { expense in
+            if displayExpenses[expense.dayInWeek] == nil {
+                displayExpenses[expense.dayInWeek] = 0
+            }
+            let prevValue = displayExpenses[expense.dayInWeek] ?? 0
+            
+            displayExpenses[expense.dayInWeek] = prevValue + expense.amount
+        }
+    }
     
     func calculateAverage() -> Double {
-        return Double((expenses.map { _, value in value }.reduce(0, { $0 + Int($1) })) / expenses.count)
+        if displayExpenses.count == 0 {
+            return 0
+        }
+        return Double((displayExpenses.map { _, value in value }.reduce(0, { $0 + Int($1) })) / displayExpenses.count)
     }
 
     var body: some View {
         Chart {
             BarMark(
                 x: .value("Day", "Monday"),
-                y: .value("Amount", expenses["Monday"]!)
+                y: .value("Amount", displayExpenses["Monday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             BarMark(
                 x: .value("Day", "Tuesday"),
-                y: .value("Amount", expenses["Tuesday"]!)
+                y: .value("Amount", displayExpenses["Tuesday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             BarMark(
                 x: .value("Day", "Wednesday"),
-                y: .value("Amount", expenses["Wednesday"]!)
+                y: .value("Amount", displayExpenses["Wednesday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             BarMark(
                 x: .value("Day", "Thursday"),
-                y: .value("Amount", expenses["Thursday"]!)
+                y: .value("Amount", displayExpenses["Thursday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             BarMark(
                 x: .value("Day", "Friday"),
-                y: .value("Amount", expenses["Friday"]!)
+                y: .value("Amount", displayExpenses["Friday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             BarMark(
                 x: .value("Day", "Saturday"),
-                y: .value("Amount", expenses["Saturday"]!)
+                y: .value("Amount", displayExpenses["Saturday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             BarMark(
                 x: .value("Day", "Sunday"),
-                y: .value("Amount", expenses["Sunday"]!)
+                y: .value("Amount", displayExpenses["Sunday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             RuleMark(y: .value("Daily average", calculateAverage()))
@@ -84,6 +89,12 @@ struct WeekChart: View {
         }
         .padding(.horizontal, 16)
         .frame(height: 147)
+        .onAppear {
+            calculateTotals()
+        }
+        .onChange(of: expenses) { _ in
+            calculateTotals()
+        }
     }
 }
 

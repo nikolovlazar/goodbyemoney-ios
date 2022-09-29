@@ -5,7 +5,6 @@
 //  Created by Lazar Nikolov on 2022-09-15.
 //
 import Sentry
-import RealmSwift
 import SwiftUI
 
 @main

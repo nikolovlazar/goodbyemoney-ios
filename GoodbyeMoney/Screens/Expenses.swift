@@ -13,6 +13,7 @@ enum Filter {
 
 struct Expenses: View {
     @EnvironmentObject var realmManager: RealmManager
+    
     @State private var searchQuery = ""
     @State private var timeFilter = Filter.week
     let columns: [GridItem] = Array(repeating: .init(.adaptive(minimum: 96), spacing: 16), count: 3)

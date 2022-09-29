@@ -9,9 +9,10 @@ import SwiftUI
 
 struct PeriodChart: View {
     var period: Period = Period.week
+    var expenses: [Expense] = []
     
     var body: some View {
-        WeekChart()
+        WeekChart(expenses: expenses)
     }
 }
 

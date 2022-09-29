@@ -11,12 +11,18 @@ import RealmSwift
 struct Add: View {
     @EnvironmentObject var realmManager: RealmManager
     
-    @State private var selectedCategory: Category = Category()
+    @State private var selectedCategory: Category = Category(name: "Create a category first", color: Color.clear)
 
     @State private var amount = ""
     @State private var recurrence = Recurrence.none
     @State private var date = Date()
     @State private var note = ""
+    
+    func onAppear() {
+        if realmManager.categories.count > 0 {
+            self.selectedCategory = realmManager.categories[0]
+        }
+    }
     
     var dateClosedRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .year, value: -1, to: Date())!
@@ -87,8 +93,12 @@ struct Add: View {
                         Text("Category")
                         Spacer()
                         Picker(selection: $selectedCategory, label: Text(""), content: {
-                            ForEach(realmManager.categories) { category in
-                                Text(category.name).tag(category)
+                            if realmManager.categories.count > 0 {
+                                ForEach(realmManager.categories) { category in
+                                    Text(category.name).tag(category)
+                                }
+                            } else {
+                                Text(selectedCategory.name).tag(selectedCategory)
                             }
                         })
                     }
@@ -122,6 +132,9 @@ struct Add: View {
             }
             .padding(.top, 16)
             .navigationTitle("Add")
+        }
+        .onAppear {
+            onAppear()
         }
     }
 }
