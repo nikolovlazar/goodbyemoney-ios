@@ -82,7 +82,7 @@ struct WeekChart: View {
             }
         }
         .chartYAxis {
-            AxisMarks(position: .leading) {
+            AxisMarks(position: .trailing) {
                 AxisValueLabel()
                 AxisGridLine().foregroundStyle(.clear)
             }

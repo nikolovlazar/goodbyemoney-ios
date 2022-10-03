@@ -9,12 +9,23 @@ import SwiftUI
 
 struct Reports: View {
     @EnvironmentObject var realmManager: RealmManager
-    @State var period: Period = Period.week
-    @State var periodIndex = 0
-    @State var tabViewSelection = 0
-    @State var expenses: [Expense] = []
+    @State private var period: Period = Period.week
+    @State private var tabViewSelection = 0
+    @State private var expenses: [Expense] = []
+    @State private var pagesRange = 0..<53
     
-    func filterData(_ index: Int) {
+    func setPagesRange() {
+        switch self.period {
+        case .week:
+            pagesRange = 0..<53
+        case .month:
+            pagesRange = 0..<12
+        case .year:
+            pagesRange = 0..<1
+        }
+    }
+    
+    func filterData(_ index: Int) -> [Expense] {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(identifier: "UTC")!
         calendar.firstWeekday = 2
@@ -24,13 +35,13 @@ struct Reports: View {
         
         switch period {
         case Period.week:
-            components = DateComponents(weekOfMonth: index)
-            intervalComponent = .weekOfMonth
+            components = DateComponents(weekOfYear: index * -1)
+            intervalComponent = .weekOfYear
         case Period.month:
-            components = DateComponents(month: index)
+            components = DateComponents(month: index * -1)
             intervalComponent = .month
         case Period.year:
-            components = DateComponents(year: index)
+            components = DateComponents(year: index * -1)
             intervalComponent = .year
         }
         
@@ -51,28 +62,25 @@ struct Reports: View {
             }
         }
         
-        expenses = newExpenses
+        return newExpenses
     }
 
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
                 TabView(selection: $tabViewSelection) {
-                    if period == Period.week || period == Period.month {
-                        ForEach(
-                            (period == Period.week ? -53 : -12)..<1
-                        ) { index in
-                            VStack {
-                                PeriodChart(period: period, expenses: expenses)
-                                ExpensesBreakdown()
-                            }
+                    ForEach(pagesRange, id: \.self) { index in
+                        VStack {
+                            PeriodOverview()
+                            PeriodChart(period: period, expenses: filterData(index))
+                            ExpensesBreakdown()
                         }
-                    } else {
-                        PeriodChart(period: period, expenses: expenses)
-                        ExpensesBreakdown()
                     }
                 }
-                .tabViewStyle(.page)
+                .environment(\.layoutDirection, .rightToLeft)
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .id(pagesRange)
+                
                 ExpensesList(expenses: groupExpensesByDate(realmManager.expenses))
             }
             .padding(.top, 16)
@@ -91,16 +99,17 @@ struct Reports: View {
                 }
             }
         }
-        .onAppear {
-            filterData(periodIndex)
-        }
+//        .onAppear {
+//            let newIndex = pagesRange.endIndex
+//            self.tabViewSelection = newIndex
+//        }
         .onChange(of: period) { _ in
-            filterData(periodIndex)
+            self.tabViewSelection = 0
+            setPagesRange()
         }
-        .onChange(of: tabViewSelection) { newIndex in
-            periodIndex = newIndex * -1
-            filterData(newIndex * -1)
-        }
+//        .onChange(of: tabViewSelection) { newIndex in
+//            filterData(newIndex * -1)
+//        }
     }
 }
 

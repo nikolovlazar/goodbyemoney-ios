@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E24D07028EB32E10085EF99 /* PeriodOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E24D06F28EB32E10085EF99 /* PeriodOverview.swift */; };
 		903B0A89857736BE5E38D2A2 /* Pods_GoodbyeMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C97110712A3DBA5AF2E1A94 /* Pods_GoodbyeMoney.framework */; };
 		EB4B67E828D8700E002A4D8B /* TotalCurrencyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67E728D8700E002A4D8B /* TotalCurrencyBox.swift */; };
 		EB4B67EA28D87376002A4D8B /* ExpensesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B67E928D87376002A4D8B /* ExpensesList.swift */; };
@@ -39,6 +40,7 @@
 		0386E1ADA63C9B5BC7B32382 /* Pods-GoodbyeMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodbyeMoney.debug.xcconfig"; path = "Target Support Files/Pods-GoodbyeMoney/Pods-GoodbyeMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		319E166A1DD883EF1631D1B1 /* Pods-GoodbyeMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodbyeMoney.release.xcconfig"; path = "Target Support Files/Pods-GoodbyeMoney/Pods-GoodbyeMoney.release.xcconfig"; sourceTree = "<group>"; };
 		5C97110712A3DBA5AF2E1A94 /* Pods_GoodbyeMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodbyeMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E24D06F28EB32E10085EF99 /* PeriodOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodOverview.swift; sourceTree = "<group>"; };
 		EB1B6B5728DC97B400DE0291 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		EB1B6B5828DC991100DE0291 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
 		EB1B6B5928DC9B7600DE0291 /* example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = example.xcconfig; sourceTree = "<group>"; };
@@ -102,6 +104,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7E24D07128EB35EB0085EF99 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		EB1B6B5628DC97A600DE0291 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +128,8 @@
 				EB4B67E728D8700E002A4D8B /* TotalCurrencyBox.swift */,
 				EB4B67E928D87376002A4D8B /* ExpensesList.swift */,
 				EB4B67FA28D8A504002A4D8B /* Tag.swift */,
+				7E24D06F28EB32E10085EF99 /* PeriodOverview.swift */,
+				7E24D07128EB35EB0085EF99 /* New Group */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -356,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4B67EC28D8759C002A4D8B /* Expense.swift in Sources */,
+				7E24D07028EB32E10085EF99 /* PeriodOverview.swift in Sources */,
 				EBA6850328D37A58000C541E /* Expenses.swift in Sources */,
 				EB4B67FB28D8A504002A4D8B /* Tag.swift in Sources */,
 				EBA684F528D3799B000C541E /* ContentView.swift in Sources */,

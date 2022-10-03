@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+import AVKit
 
 struct Add: View {
     @EnvironmentObject var realmManager: RealmManager
