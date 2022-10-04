@@ -27,28 +27,8 @@ struct WeekChart: View {
     var body: some View {
         Chart {
             BarMark(
-                x: .value("Day", "Monday"),
-                y: .value("Amount", displayExpenses["Monday"] ?? 0)
-            )
-            .clipShape(RoundedRectangle(cornerRadius: 6))
-            BarMark(
-                x: .value("Day", "Tuesday"),
-                y: .value("Amount", displayExpenses["Tuesday"] ?? 0)
-            )
-            .clipShape(RoundedRectangle(cornerRadius: 6))
-            BarMark(
-                x: .value("Day", "Wednesday"),
-                y: .value("Amount", displayExpenses["Wednesday"] ?? 0)
-            )
-            .clipShape(RoundedRectangle(cornerRadius: 6))
-            BarMark(
-                x: .value("Day", "Thursday"),
-                y: .value("Amount", displayExpenses["Thursday"] ?? 0)
-            )
-            .clipShape(RoundedRectangle(cornerRadius: 6))
-            BarMark(
-                x: .value("Day", "Friday"),
-                y: .value("Amount", displayExpenses["Friday"] ?? 0)
+                x: .value("Day", "Sunday"),
+                y: .value("Amount", displayExpenses["Sunday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             BarMark(
@@ -57,8 +37,28 @@ struct WeekChart: View {
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             BarMark(
-                x: .value("Day", "Sunday"),
-                y: .value("Amount", displayExpenses["Sunday"] ?? 0)
+                x: .value("Day", "Friday"),
+                y: .value("Amount", displayExpenses["Friday"] ?? 0)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            BarMark(
+                x: .value("Day", "Thursday"),
+                y: .value("Amount", displayExpenses["Thursday"] ?? 0)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            BarMark(
+                x: .value("Day", "Wednesday"),
+                y: .value("Amount", displayExpenses["Wednesday"] ?? 0)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            BarMark(
+                x: .value("Day", "Tuesday"),
+                y: .value("Amount", displayExpenses["Tuesday"] ?? 0)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            BarMark(
+                x: .value("Day", "Monday"),
+                y: .value("Amount", displayExpenses["Monday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
             RuleMark(y: .value("Daily average", average))

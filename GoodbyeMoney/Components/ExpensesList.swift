@@ -87,6 +87,7 @@ struct ExpensesList: View {
                     }
                 }
             }
+            .environment(\.layoutDirection, .leftToRight)
             .padding(.horizontal, 16)
         }
     }

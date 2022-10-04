@@ -7,15 +7,11 @@
 
 import SwiftUI
 
-enum Filter {
-    case day, week, month, year
-}
-
 struct Expenses: View {
     @EnvironmentObject var realmManager: RealmManager
     
     @State private var searchQuery = ""
-    @State private var timeFilter = Filter.week
+    @State private var timeFilter = Period.week
     let columns: [GridItem] = Array(repeating: .init(.adaptive(minimum: 96), spacing: 16), count: 3)
     
     var body: some View {
@@ -24,15 +20,15 @@ struct Expenses: View {
                 HStack {
                    Text("Total for:")
                     Picker("", selection: $timeFilter, content: {
-                        Text("today").tag(Filter.day)
-                        Text("this week").tag(Filter.week)
-                        Text("this month").tag(Filter.month)
-                        Text("this year").tag(Filter.year)
+                        Text("today").tag(Period.day)
+                        Text("this week").tag(Period.week)
+                        Text("this month").tag(Period.month)
+                        Text("this year").tag(Period.year)
                     })
                     .foregroundColor(.white)
                 }
                 
-                ExpensesList(expenses: groupExpensesByDate(realmManager.expenses))
+                ExpensesList(expenses: groupExpensesByDate(filterExpensesInPeriod(period: timeFilter, expenses: realmManager.expenses, periodIndex: 0).expenses))
             }
             .frame(
               minWidth: 0,

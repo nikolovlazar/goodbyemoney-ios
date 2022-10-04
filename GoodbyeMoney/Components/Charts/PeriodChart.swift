@@ -25,6 +25,8 @@ struct PeriodChart: View {
         var format = ""
 
         switch period {
+        case Period.day:
+            break
         case Period.week:
             dateFormatter.dateFormat = "d MMM"
             format = "\(dateFormatter.string(from: startDate)) - \(dateFormatter.string(from: endDate))"
@@ -40,32 +42,27 @@ struct PeriodChart: View {
     }
     
     func setupData() {
-        let interval = intervalForPeriod(period: period, periodIndex: periodIndex)
-        
-        let range = (interval.start ... interval.end)
-        
-        var newExpenses: [Expense] = []
+        var (newExpenses, range) = filterExpensesInPeriod(period: period, expenses: realmManager.expenses, periodIndex: periodIndex)
         var total: Double = 0
         var average: Double = 0
 
-        realmManager.expenses.forEach { expense in
-            if range.contains(expense.date) {
-                newExpenses.append(expense)
-                total += expense.amount
-            }
+        newExpenses.forEach { expense in
+            total += expense.amount
         }
 
         switch period {
+        case Period.day:
+            break
         case Period.week:
             average = total / 7
         case Period.month:
-            let numOfDays = Calendar.current.dateComponents([.day], from: interval.start, to: interval.end).day!
+            let numOfDays = Calendar.current.dateComponents([.day], from: range.lowerBound, to: range.upperBound).day!
             average = total / Double(numOfDays)
         case Period.year:
             average = total
         }
 
-        periodString = formatDateRange(startDate: interval.start, endDate: interval.end)
+        periodString = formatDateRange(startDate: range.lowerBound, endDate: range.upperBound)
         totalForPeriod = total
         averageForPeriod = average
         displayExpenses = newExpenses
@@ -78,7 +75,7 @@ struct PeriodChart: View {
             WeekChart(expenses: displayExpenses, average: averageForPeriod)
                 .id(displayExpenses)
             ExpensesBreakdown()
-            ExpensesList(expenses: groupExpensesByDate(realmManager.expenses))
+            ExpensesList(expenses: groupExpensesByDate(filterExpensesInPeriod(period: period, expenses: displayExpenses, periodIndex: periodIndex).expenses))
         }
         .onAppear {
             setupData()

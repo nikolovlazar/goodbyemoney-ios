@@ -43,3 +43,18 @@ func groupExpensesByDate(_ expenses: [Expense]) -> [Dictionary<String, [Expense]
     return sorted
 }
 
+func filterExpensesInPeriod(period: Period, expenses: [Expense], periodIndex: Int) -> (expenses: [Expense], range: ClosedRange<Date>) {
+    let interval = intervalForPeriod(period: period, periodIndex: periodIndex)
+    
+    let range = interval.start ... interval.end
+    
+    var filteredExpenses: [Expense] = []
+
+    expenses.forEach { expense in
+        if range.contains(expense.date) {
+            filteredExpenses.append(expense)
+        }
+    }
+    
+    return (expenses: filteredExpenses, range: range)
+}

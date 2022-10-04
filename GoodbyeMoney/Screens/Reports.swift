@@ -16,6 +16,8 @@ struct Reports: View {
     
     func setPagesRange() {
         switch self.period {
+        case .day:
+            break
         case .week:
             pagesRange = 0..<53
         case .month:

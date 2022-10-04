@@ -37,6 +37,9 @@ func intervalForPeriod(period: Period, periodIndex: Int) -> DateInterval {
     var intervalComponent: Calendar.Component
     
     switch period {
+    case Period.day:
+        components = DateComponents(day: periodIndex * -1)
+        intervalComponent = .day
     case Period.week:
         components = DateComponents(weekOfYear: periodIndex * -1)
         intervalComponent = .weekOfYear
@@ -50,7 +53,7 @@ func intervalForPeriod(period: Period, periodIndex: Int) -> DateInterval {
     
     let targetDate = calendar.date(byAdding: components, to: Date())!
     
-    return = calendar.dateInterval(of: intervalComponent, for: targetDate)!
+    return calendar.dateInterval(of: intervalComponent, for: targetDate)!
 }
 
 func formatDateToShort(_ date: Date) -> String {

@@ -15,18 +15,6 @@ struct PeriodOverview: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Avg/day")
-                    .font(.title3)
-                HStack(spacing: 4) {
-                    Text("\(averageForPeriod.roundTo(2))")
-                        .font(.headline)
-                    Text("USD")
-                        .font(.callout)
-                        .foregroundColor(.secondary)
-                }
-            }
-            Spacer()
-            VStack(alignment: .trailing, spacing: 8) {
                 Text(period)
                     .font(.title3)
                 HStack(spacing: 4) {
@@ -37,7 +25,20 @@ struct PeriodOverview: View {
                         .foregroundColor(.secondary)
                 }
             }
+            Spacer()
+            VStack(alignment: .trailing, spacing: 8) {
+                Text("Avg/day")
+                    .font(.title3)
+                HStack(spacing: 4) {
+                    Text("\(averageForPeriod.roundTo(2))")
+                        .font(.headline)
+                    Text("USD")
+                        .font(.callout)
+                        .foregroundColor(.secondary)
+                }
+            }
         }
+        .environment(\.layoutDirection, .leftToRight)
         .padding(.horizontal, 16)
     }
 }
