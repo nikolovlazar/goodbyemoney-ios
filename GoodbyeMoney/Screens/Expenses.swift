@@ -32,13 +32,6 @@ struct Expenses: View {
                     .foregroundColor(.white)
                 }
                 
-//                LazyVGrid(columns: columns, spacing: 16) {
-//                    ForEach(totalsPerCurrency, id: \.currency) {
-//                        TotalCurrencyBox(amount: $0.amount, currency: $0.currency)
-//                    }
-//                }
-//                .padding(.horizontal, 16)
-                
                 ExpensesList(expenses: groupExpensesByDate(realmManager.expenses))
             }
             .frame(

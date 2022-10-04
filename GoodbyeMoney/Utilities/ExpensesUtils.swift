@@ -43,6 +43,3 @@ func groupExpensesByDate(_ expenses: [Expense]) -> [Dictionary<String, [Expense]
     return sorted
 }
 
-func expensesInPeriod() {
-    
-}

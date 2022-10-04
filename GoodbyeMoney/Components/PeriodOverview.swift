@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct PeriodOverview: View {
+    var period: String
+    var totalForPeriod: Double
+    var averageForPeriod: Double
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Avg/day")
                     .font(.title3)
                 HStack(spacing: 4) {
-                    Text("85")
+                    Text("\(averageForPeriod.roundTo(2))")
                         .font(.headline)
                     Text("USD")
                         .font(.callout)
@@ -23,13 +27,10 @@ struct PeriodOverview: View {
             }
             Spacer()
             VStack(alignment: .trailing, spacing: 8) {
-                Text("12 Sep - 18 Sep")
+                Text(period)
                     .font(.title3)
                 HStack(spacing: 4) {
-                    Text("+4%")
-                        .foregroundColor(.red)
-                        .padding(.trailing, 12)
-                    Text("850")
+                    Text("\(totalForPeriod.roundTo(2))")
                         .font(.headline)
                     Text("USD")
                         .font(.callout)
@@ -43,6 +44,6 @@ struct PeriodOverview: View {
 
 struct PeriodOverview_Previews: PreviewProvider {
     static var previews: some View {
-        PeriodOverview()
+        PeriodOverview(period: "12 Sep - 18 Sep", totalForPeriod: 85, averageForPeriod: 12)
     }
 }

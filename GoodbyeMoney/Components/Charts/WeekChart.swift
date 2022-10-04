@@ -10,6 +10,7 @@ import Charts
 
 struct WeekChart: View {
     var expenses: [Expense] = []
+    var average: Double = 0
     @State var displayExpenses: [String: Double] = [:]
     
     func calculateTotals() {
@@ -21,13 +22,6 @@ struct WeekChart: View {
             
             displayExpenses[expense.dayInWeek] = prevValue + expense.amount
         }
-    }
-    
-    func calculateAverage() -> Double {
-        if displayExpenses.count == 0 {
-            return 0
-        }
-        return Double((displayExpenses.map { _, value in value }.reduce(0, { $0 + Int($1) })) / displayExpenses.count)
     }
 
     var body: some View {
@@ -67,7 +61,7 @@ struct WeekChart: View {
                 y: .value("Amount", displayExpenses["Sunday"] ?? 0)
             )
             .clipShape(RoundedRectangle(cornerRadius: 6))
-            RuleMark(y: .value("Daily average", calculateAverage()))
+            RuleMark(y: .value("Daily average", average))
                 .foregroundStyle(.gray)
                 .lineStyle(StrokeStyle(lineWidth: 1, dash: [5]))
         }

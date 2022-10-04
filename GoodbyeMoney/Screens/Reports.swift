@@ -24,46 +24,6 @@ struct Reports: View {
             pagesRange = 0..<1
         }
     }
-    
-    func filterData(_ index: Int) -> [Expense] {
-        var calendar = Calendar.current
-        calendar.timeZone = TimeZone(identifier: "UTC")!
-        calendar.firstWeekday = 2
-        
-        var components: DateComponents
-        var intervalComponent: Calendar.Component
-        
-        switch period {
-        case Period.week:
-            components = DateComponents(weekOfYear: index * -1)
-            intervalComponent = .weekOfYear
-        case Period.month:
-            components = DateComponents(month: index * -1)
-            intervalComponent = .month
-        case Period.year:
-            components = DateComponents(year: index * -1)
-            intervalComponent = .year
-        }
-        
-        let targetDate = calendar.date(byAdding: components, to: Date())!
-        
-        let interval = calendar.dateInterval(of: intervalComponent, for: targetDate)!
-        
-        let startDate = interval.start
-        let endDate = interval.end
-        
-        let range = (startDate ... endDate)
-        
-        var newExpenses: [Expense] = []
-        
-        realmManager.expenses.forEach { expense in
-            if range.contains(expense.date) {
-                newExpenses.append(expense)
-            }
-        }
-        
-        return newExpenses
-    }
 
     var body: some View {
         NavigationView {
@@ -71,17 +31,14 @@ struct Reports: View {
                 TabView(selection: $tabViewSelection) {
                     ForEach(pagesRange, id: \.self) { index in
                         VStack {
-                            PeriodOverview()
-                            PeriodChart(period: period, expenses: filterData(index))
-                            ExpensesBreakdown()
+                            PeriodChart(period: period, expenses: expenses, periodIndex: index)
+                                .environmentObject(realmManager)
                         }
                     }
                 }
                 .environment(\.layoutDirection, .rightToLeft)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .id(pagesRange)
-                
-                ExpensesList(expenses: groupExpensesByDate(realmManager.expenses))
             }
             .padding(.top, 16)
             .navigationTitle("Reports")

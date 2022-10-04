@@ -28,6 +28,31 @@ func parseDate(_ date: String) -> Date {
     return parsedDate!
 }
 
+func intervalForPeriod(period: Period, periodIndex: Int) -> DateInterval {
+    var calendar = Calendar.current
+    calendar.timeZone = TimeZone(identifier: "UTC")!
+    calendar.firstWeekday = 2
+    
+    var components: DateComponents
+    var intervalComponent: Calendar.Component
+    
+    switch period {
+    case Period.week:
+        components = DateComponents(weekOfYear: periodIndex * -1)
+        intervalComponent = .weekOfYear
+    case Period.month:
+        components = DateComponents(month: periodIndex * -1)
+        intervalComponent = .month
+    case Period.year:
+        components = DateComponents(year: periodIndex * -1)
+        intervalComponent = .year
+    }
+    
+    let targetDate = calendar.date(byAdding: components, to: Date())!
+    
+    return = calendar.dateInterval(of: intervalComponent, for: targetDate)!
+}
+
 func formatDateToShort(_ date: Date) -> String {
     let formatter = DateFormatter()
     formatter.locale = Locale(identifier: "en_US_POSIX")
