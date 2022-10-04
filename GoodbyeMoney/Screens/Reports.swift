@@ -58,17 +58,10 @@ struct Reports: View {
                 }
             }
         }
-//        .onAppear {
-//            let newIndex = pagesRange.endIndex
-//            self.tabViewSelection = newIndex
-//        }
         .onChange(of: period) { _ in
             self.tabViewSelection = 0
             setPagesRange()
         }
-//        .onChange(of: tabViewSelection) { newIndex in
-//            filterData(newIndex * -1)
-//        }
     }
 }
 

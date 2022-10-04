@@ -12,7 +12,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            Expenses()
+            Expenses(expenses: realmManager.expenses)
                 .environmentObject(realmManager)
                 .tabItem {
                     Label("Expenses", systemImage: "tray.and.arrow.up.fill")

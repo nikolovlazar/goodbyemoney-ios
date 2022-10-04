@@ -29,9 +29,17 @@ struct ExpensesList: View {
             LazyVStack(alignment: .leading, spacing: 24) {
                 ForEach(Array(expenses), id: \.key) { key, value in
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("\(getHeaderText(key))")
-                            .font(.headline)
-                            .foregroundColor(.secondary)
+                        HStack(alignment: .firstTextBaseline) {
+                            Text("\(getHeaderText(key))")
+                                .font(.headline)
+                                .foregroundColor(.secondary)
+                            
+                            Spacer()
+                            
+                            Text("USD \(value.map{ $0.amount }.reduce(0, { $0 + $1 }).roundTo(2))")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
                         
                         Divider()
                         
@@ -66,24 +74,8 @@ struct ExpensesList: View {
                                         .foregroundColor(.secondary)
                                 }
                             }
-                            .padding(.bottom, 4)
+                            .padding(.bottom, 12)
                         }
-                        Divider()
-                           
-                        HStack(alignment: .top) {
-                            Text("Total:")
-                                .font(.body)
-                                .foregroundColor(.secondary)
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .trailing) {
-                                Text("USD \(value.map{ $0.amount }.reduce(0, { $0 + $1 }).roundTo(2))")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
-                            }
-                        }
-                        .padding(.bottom, 12)
                     }
                 }
             }
